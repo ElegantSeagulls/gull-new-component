@@ -4,9 +4,9 @@ import * as path from 'path'
 import * as fs from 'fs';
 
 // Called when extension activated (very first time command executed)
-export function activate(context: vscode.ExtensionContext) {				
+export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('extension.gull-component', async (selectedFolder: any) => {
-		let pathToFile = selectedFolder && (selectedFolder.fsPath || selectedFolder.path);    		
+		let pathToFile = selectedFolder && (selectedFolder.fsPath || selectedFolder.path);
 
 		if (!pathToFile) return;
 
@@ -18,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 			},
 			{
 				label: 'Styled Components',
-				description: 'import styled from \'styled\';',				
+				description: 'import styled from \'styled\';',
 				picked: true,
 			},
 			{
@@ -39,17 +39,17 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// Filter name.
 		componentName = _.upperFirst(_.camelCase(_.deburr(componentName)));
-		
+
 		// QuickPickOptions for dialog.
 		const importOptions: vscode.QuickPickOptions = {
 			canPickMany: true,
 		};
 
 		// Fetch choices.
-		const importResponse =  await vscode.window.showQuickPick(imports, importOptions);		
-					
-		var fakeComponent: String = '';		
-		
+		const importResponse =  await vscode.window.showQuickPick(imports, importOptions);
+
+		var fakeComponent: String = '';
+
 		// Add imports to file contents.
 		importResponse && Object.keys(importResponse).forEach((key: string, index: number) => {
 			const { description } = imports[index];
@@ -63,9 +63,9 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		fakeComponent += `const ${componentName} = (props) => (\n\n`;
-		fakeComponent += ');\n\n';		
+		fakeComponent += ');\n\n';
 		fakeComponent += `export default ${componentName};`;
-						
+
 
 		// Write to selected path.
 		try {
@@ -73,8 +73,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 			fs.writeFileSync(`${newPath}.js`, fakeComponent);
 		} catch (writeError) {
-			console.log('Error creating new Gull Component.');			
-		}					
+			console.log('Error creating new Gull Component.');
+		}
 	});
 
 	context.subscriptions.push(disposable);
