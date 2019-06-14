@@ -4,6 +4,10 @@
 	"description": "Rapidly create React components with various options.",
 	"version": "0.0.1",
 	"author": "Elegant Seagulls",
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/ElegantSeagulls/gull-new-component"
+	},
 	"engines": {
 		"vscode": "^1.35.0"
 	},
