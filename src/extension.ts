@@ -18,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 			},
 			{
 				label: 'Styled Components',
-				description: 'import styled from \'styled\';',
+				description: 'import styled from \'styled-components\';',
 				picked: true,
 			},
 			{
