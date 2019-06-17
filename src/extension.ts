@@ -64,8 +64,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		fakeComponent += `const ${componentName} = (props) => (\n\n`;
 		fakeComponent += ');\n\n';
-		fakeComponent += `export default ${componentName};`;
-
+    fakeComponent += `export default ${componentName};\n\n`;
 
 		// Write to selected path.
 		try {
