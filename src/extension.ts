@@ -64,7 +64,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		fakeComponent += `const ${componentName} = (props) => (\n\n`;
 		fakeComponent += ');\n\n';
-    fakeComponent += `export default ${componentName};\n\n`;
+    fakeComponent += `export default ${componentName};\n`;
 
 		// Write to selected path.
 		try {
@@ -75,7 +75,7 @@ export function activate(context: vscode.ExtensionContext) {
 			console.log('Error creating new Gull Component.');
 		}
 	});
-
+test
 	context.subscriptions.push(disposable);
 }
 
