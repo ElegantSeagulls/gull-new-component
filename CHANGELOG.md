@@ -13,6 +13,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Fixed
 - Fixed import for Styled Components
 
-## [1.0.1] - 2019-06-18
+## [1.0.2] - 2019-06-18
 ### Fixed
 - Removed extra new line

@@ -2,7 +2,7 @@
 	"name": "gull-component",
 	"displayName": "Gull New Component",
 	"description": "Rapidly create React components with various options.",
-	"version": "1.0.1",
+	"version": "1.0.2",
   "author": "Elegant Seagulls",
   "publisher": "ElegantSeagulls",
 	"repository": {
