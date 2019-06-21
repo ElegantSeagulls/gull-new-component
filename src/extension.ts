@@ -49,11 +49,9 @@ export function activate(context: vscode.ExtensionContext) {
     ];
 
 		// Fetch config.
-		const config = await readConfig();
+		const config = readConfig();
 
 		if (config.imports) {
-			const labels = imports.map(importItem => importItem.label);
-
 			// For each import.
 			config.imports.map((configImport: vscode.QuickPickItem) => {
 				// Remove duplicates, letting config override items.
