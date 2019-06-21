@@ -8,7 +8,7 @@ import * as fs from 'fs';
  * returns it to the main function for futher use.
  *
  */
-async function readConfig() {
+function readConfig() {
 	let root: string = vscode.workspace.rootPath || '';
 
 	try {
