@@ -2,12 +2,12 @@
 	"name": "gull-component",
 	"displayName": "Gull New Component",
 	"description": "Rapidly create React components with various options.",
-	"version": "1.0.2",
-  "author": "Elegant Seagulls",
-  "publisher": "ElegantSeagulls",
+	"version": "1.0.3",
+	"author": "Elegant Seagulls",
+	"publisher": "ElegantSeagulls",
 	"repository": {
-		"type" : "git",
-		"url" : "https://github.com/ElegantSeagulls/gull-new-component"
+		"type": "git",
+		"url": "https://github.com/ElegantSeagulls/gull-new-component"
 	},
 	"engines": {
 		"vscode": "^1.35.0"
