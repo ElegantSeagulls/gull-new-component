@@ -78,11 +78,16 @@ export function activate(context: vscode.ExtensionContext) {
 		// Fetch choices.
     const importResponse = await vscode.window.showQuickPick(imports, importOptions);
 
+    // Preset booleans per requests.
+    let propTypes = false;
+
 		var fakeComponent: String = '';
 
 		// Add imports to file contents.
 		importResponse && Object.keys(importResponse).forEach((key: string, index: number) => {
-			const { description } = imports.filter(importItem => importItem.label === (<any>importResponse)[key]['label'])[0];
+      const { description } = imports.filter(importItem => importItem.label === (<any>importResponse)[key]['label'])[0];
+
+      if ((<any>importResponse)[key]['label'] === 'Prop Types') propTypes = true;
 
 			fakeComponent += `${description}\n`;
 		});
@@ -93,7 +98,13 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		fakeComponent += `const ${componentName} = (props) => (\n\n`;
-		fakeComponent += ');\n\n';
+    fakeComponent += ');\n\n';
+
+    if (propTypes) {
+      fakeComponent += `${componentName}.propTypes = {\n\n`;
+      fakeComponent += `};\n\n`
+    }
+
     fakeComponent += `export default ${componentName};\n`;
 
 		// Write to selected path.
