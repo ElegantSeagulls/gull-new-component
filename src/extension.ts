@@ -38,14 +38,14 @@ export function activate(context: vscode.ExtensionContext) {
 				description: 'import styled from \'styled-components\';',
 				picked: true,
 			},
+      {
+        label: 'Stitches',
+        description: 'import { styled } from \'styles/stitches.config\';',
+      },
 			{
 				label: 'Prop Types',
 				description: 'import PropTypes from \'prop-types\';',
 			},
-			{
-				label: 'Axios',
-				description: 'import axios from \'axios\';',
-			}
     ];
 
 		// Fetch config.
@@ -97,15 +97,13 @@ export function activate(context: vscode.ExtensionContext) {
 			fakeComponent += '\n';
 		}
 
-		fakeComponent += `const ${componentName} = (props) => (\n\n`;
-    fakeComponent += ');\n\n';
+		fakeComponent += `export const ${componentName} = (props) => (\n\n`;
+    fakeComponent += ');\n';
 
     if (propTypes) {
-      fakeComponent += `${componentName}.propTypes = {\n\n`;
-      fakeComponent += `};\n\n`
+			fakeComponent += `\n${componentName}.propTypes = {\n\n`;
+      fakeComponent += `};\n`
     }
-
-    fakeComponent += `export default ${componentName};\n`;
 
 		// Write to selected path.
 		try {
