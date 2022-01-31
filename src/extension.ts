@@ -30,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
 		let imports: vscode.QuickPickItem[] = [
 			{
 				label: 'React',
-				description: 'import React from \'react\';',
+        description: 'import * as React from \'react\';',
 				picked: true,
 			},
 			{
@@ -109,7 +109,7 @@ export function activate(context: vscode.ExtensionContext) {
 		try {
 			const newPath = path.resolve(pathToFile, componentName);
 
-			fs.writeFileSync(`${newPath}.js`, fakeComponent);
+			fs.writeFileSync(`${newPath}.jsx`, fakeComponent);
 		} catch (writeError) {
 			console.log('Error creating new Gull Component.');
 		}
