@@ -14,13 +14,13 @@
     "picked": true,
   },
   {
+    "label": "Stitches",
+    "description": "import { styled } from 'styles/stitches.config';",
+  },
+  {
     "label": "Prop Types",
     "description": "import PropTypes from 'prop-types';",
   },
-  {
-    "label": "Axios",
-    "description": "import axios from 'axios';",
-  }
 ```
 ## Config File
 
@@ -64,15 +64,13 @@ Specifying an import with a label that exists as a default will override that de
 See `Styled Components` in the output below when selecting `Styled Components` from the GullComponent extension dropdown with the above config in place.
 
 ```javascript
-import React from 'react';
+import * as React from 'react';
 import axios from 'axios';
 import styled, { css } from 'styled-components';
 import { format } from 'date-fns';
 
-const MyComponent = (props) => (
+export const MyComponent = (props) => (
 
 );
-
-export default MyComponent
 
 ```
