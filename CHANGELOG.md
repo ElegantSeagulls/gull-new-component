@@ -18,7 +18,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Removed extra new line
 
 ## [1.1.0] - 2022-02-01
-- Change React import (See here)[https://twitter.com/dan_abramov/status/1308739731551858689?s=20&t=JwZ7Jr2RwV5YRxjr92-7rw]
+- Change React import [See here](https://twitter.com/dan_abramov/status/1308739731551858689?s=20&t=JwZ7Jr2RwV5YRxjr92-7rw)
 - Remove Axios and add Stitches to default picker
 - Change from default to named export
 - Change file extension from `.js` &rarr; `.jsx`
